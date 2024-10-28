@@ -193,7 +193,10 @@ app.post('/bookings', async (req, res) => {
     place, checkIn, checkOut,
     numberOfGuests, name, phone, price,
   } = req.body;
-  Booking.create({
+  // const booking = new Booking(req.body, )
+  // await booking.save()
+  // res.status(200).json({ message: "Booking created", data: booking })
+  await Booking.create({
     place, checkIn, checkOut, numberOfGuests, name, phone, price,
     user:userData.id,
   }).then((doc) => {

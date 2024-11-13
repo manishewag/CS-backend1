@@ -16,7 +16,10 @@ require('dotenv').config();
 
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://cs-client.netlify.app",
+  credentials: true,
+}));
 
 const bcryptSalt = bcrypt.genSaltSync(10);
 const jwtSecret = 'esrdfuiuilhgf';
